@@ -1,0 +1,12 @@
+{
+  "name": "myportfolio",
+  "private": true,
+  "scripts": {
+    "build": "npm run build --prefix nilesh-portfolio-react",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d nilesh-portfolio-react/dist"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
