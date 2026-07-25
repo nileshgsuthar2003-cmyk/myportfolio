@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nilesh Suthar — Portfolio</title>
+  <meta name="description" content="Portfolio of Nilesh Suthar, Software Engineer and AI Aspirant based in Pune, India. Expert in Java, Spring Boot, Python, PyTorch, and NLP.">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Social Media & Open Graph Meta Tags -->
+  <meta property="og:title" content="Nilesh Suthar — Portfolio">
+  <meta property="og:description" content="Portfolio of Nilesh Suthar, Software Engineer and AI Aspirant.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/scribble.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <!-- Fixed Vertical Grid Lines -->
+  <div class="grid-line grid-line-left"></div>
+  <div class="grid-line grid-line-right"></div>
+
+  <!-- Top Navigation Bar -->
+  <nav class="top-nav">
+    <div class="logo-text">N.S.</div>
+    <div class="nav-links">
+      <a href="#works" class="nav-link">Works</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#footer" class="nav-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Interactive Backdrop Layer -->
+  <div class="hero-backdrop" id="heroBackdrop">
+    <div class="scribble-wrap">
+      <img src="assets/scribble.svg" alt="scribble graphic">
+    </div>
+    <div class="hero-portrait-wrap">
+      <div class="hero-avatar-card">
+        <span class="hero-avatar-initials">NS</span>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <!-- Cursive Signature SVG (Spells Nilesh) -->
+      <div class="hero-signature-container">
+        <svg viewBox="0 0 450 160" fill="none" class="signature-svg">
+          <!-- Continuous cursive path spelling 'Nilesh' with swash -->
+          <path d="M 25 100 C 20 60, 40 20, 50 20 C 55 20, 60 70, 70 120 C 75 140, 80 10, 90 20 C 100 30, 95 100, 110 80 C 115 70, 120 65, 125 70 C 130 75, 125 90, 135 90 C 140 70, 145 20, 155 20 C 160 20, 155 70, 160 90 C 165 80, 170 70, 175 70 C 180 70, 175 90, 185 90 C 195 90, 205 70, 200 65 C 195 60, 190 90, 205 90 C 215 70, 220 20, 228 20 C 232 20, 228 80, 232 90 C 236 100, 240 70, 248 70 C 255 70, 252 85, 260 90 C 270 95, 290 100, 310 100 C 330 100, 350 95, 370 90 C 390 85, 410 80, 420 85 C 430 90, 400 110, 350 120 C 270 135, 120 145, 50 140 C 30 138, 15 130, 20 120" stroke="#E48F5B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+          <!-- Dot for the 'i' in Nilesh -->
+          <path d="M 123 45 A 2.5 2.5 0 1 1 128 45" stroke="#E48F5B" stroke-width="6" stroke-linecap="round" />
+        </svg>
+      </div>
+
+      <!-- Title / Header Group -->
+      <div class="hero-title-group">
+        <!-- Left Subtitle Connection Line -->
+        <div class="hero-lines-wrap hero-lines-left">
+          <div class="hero-line-seg"></div>
+          <span class="hero-subtitle-text">Software Engineer</span>
+        </div>
+
+        <!-- Name Heading -->
+        <h1 class="hero-name-heading" id="heroName">Nilesh Suthar</h1>
+
+        <!-- Right Subtitle Connection Line -->
+        <div class="hero-lines-wrap hero-lines-right">
+          <div class="hero-line-seg"></div>
+        </div>
+
+        <!-- Mobile Subtitles (centered) -->
+        <div class="hero-mobile-subtitle">
+          <span class="hero-subtitle-text">Software Engineer</span>
+        </div>
+      </div>
+
+      <!-- Transition blocks at the bottom of hero -->
+      <div class="transition-blocks">
+        <div class="trans-block-item"></div>
+        <div class="trans-block-item"></div>
+        <div class="trans-block-item"></div>
+        <div class="trans-block-item"></div>
+        <div class="trans-block-item"></div>
+      </div>
+    </section>
+
+    <!-- Sticky Roles Pills Section -->
+    <section class="pills-track-section">
+      <div class="pills-container">
+        <span class="role-pill">Backend Developer</span>
+        <span class="role-pill">AI/ML Engineer</span>
+        <span class="role-pill">Java Specialist</span>
+      </div>
+    </section>
+
+    <!-- Sticky Reveal Text Section -->
+    <div class="sticky-intro-container" id="introContainer">
+      <section class="sticky-intro-section">
+        <p class="intro-text-paragraph" id="introText">
+          MCA Student & AI Specialist crafting intelligent systems and robust backend architectures.
+        </p>
+      </section>
+    </div>
+
+    <!-- Sticky Skills Section -->
+    <div class="sticky-skills-container" id="skillsContainer">
+      <section class="sticky-skills-section" id="skills">
+        <img src="assets/brush-stroke.webp" alt="brush stroke separator" class="brush-stroke-banner">
+        
+        <div class="skills-wrapper">
+          <div class="skills-left">
+            <p class="skills-summary-intro">Developing backend APIs and AI pipelines that solve real-world problems.</p>
+            <div class="skills-scrolling-titles">
+              <div class="skill-row-title active" data-skill-index="0" style="cursor: pointer;">Backend Dev</div>
+              <div class="skill-row-title inactive" data-skill-index="1" style="cursor: pointer;">AI & Deep Learning</div>
+              <div class="skill-row-title inactive" data-skill-index="2" style="cursor: pointer;">Cloud & Tools</div>
+            </div>
+          </div>
+          
+          <div class="skills-right">
+            <div class="skill-detail-display-box" id="skillDisplayBox">
+              <div>
+                <div class="skill-box-header">
+                  <div class="skill-icon-placeholder" id="skillIcon">
+                    <!-- Java/Server Icon -->
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                    </svg>
+                  </div>
+                  <h3 class="skill-box-title" id="skillTitle">Backend Development</h3>
+                </div>
+                <p class="skill-box-content" id="skillContent">
+                  Designing robust server applications and RESTful APIs using Java (Core & Advanced) and Spring Boot, as well as Python and Django. Experienced in database schema design, indexing, and query optimization inside MySQL.
+                </p>
+              </div>
+              <div class="skill-pill-tags" id="skillPills">
+                <span class="skill-pill-tag">Java</span>
+                <span class="skill-pill-tag">Spring Boot</span>
+                <span class="skill-pill-tag">Django</span>
+                <span class="skill-pill-tag">MySQL</span>
+                <span class="skill-pill-tag">REST APIs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Works / Projects Section -->
+    <section class="works-section" id="works">
+      <div class="works-header">
+        <h2 class="works-section-title" id="worksTitle">Curated Projects</h2>
+        <p class="works-section-desc">A selection of full-stack applications and machine learning engines built with intention.</p>
+      </div>
+
+      <div class="works-grid-container">
+        <!-- Project 1: Math PDF Extractor -->
+        <a href="https://github.com/nilesh-suthar" target="_blank" class="work-card">
+          <div class="card-hover-bg"></div>
+          <div class="project-mockup-container">
+            <div class="terminal-mockup">
+              <div class="terminal-header">
+                <span class="term-dot dot-red"></span>
+                <span class="term-dot dot-yellow"></span>
+                <span class="term-dot dot-green"></span>
+              </div>
+              <div class="terminal-body">
+                <div class="term-line cmd">python extract.py</div>
+                <div class="term-line info">Loading Nougat model...</div>
+                <div class="term-line success">Formula Extracted:</div>
+                <div class="term-line math">$$ f(x) = \int e^{-x^2} dx $$</div>
+                <div class="term-line cmd">nilesh$ █</div>
+              </div>
+            </div>
+          </div>
+          <div class="work-card-top">
+            <span class="work-card-year">2025</span>
+            <div class="work-card-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </div>
+          <div class="work-card-middle">
+            <h3 class="work-project-title">Math PDF Extractor</h3>
+            <p class="work-project-description">Developed an advanced OCR utility utilizing Meta’s Nougat model and Hugging Face Transformers to transcribe scientific papers and extract complex formulas into structured Markdown format.</p>
+          </div>
+          <div class="work-card-bottom">
+            <span class="work-tag">Python</span>
+            <span class="work-tag">PyTorch</span>
+            <span class="work-tag">Nougat</span>
+            <span class="work-tag">Hugging Face</span>
+          </div>
+        </a>
+
+        <!-- Project 2: Online Book Store -->
+        <a href="https://github.com/nilesh-suthar" target="_blank" class="work-card">
+          <div class="card-hover-bg"></div>
+          <div class="project-mockup-container">
+            <div class="bookstore-mockup">
+              <div class="mock-book book-one">
+                <div class="book-spine"></div>
+                <div class="book-cover">
+                  <div class="book-title">Spring Boot</div>
+                  <div class="book-author">API Engine</div>
+                </div>
+              </div>
+              <div class="mock-book book-two">
+                <div class="book-spine"></div>
+                <div class="book-cover">
+                  <div class="book-title">SQL DB</div>
+                  <div class="book-author">MySQL</div>
+                </div>
+              </div>
+              <div class="shop-badge">$24.99</div>
+            </div>
+          </div>
+          <div class="work-card-top">
+            <span class="work-card-year">2024</span>
+            <div class="work-card-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </div>
+          <div class="work-card-middle">
+            <h3 class="work-project-title">Online Book Store</h3>
+            <p class="work-project-description">Built a dynamic full-stack e-commerce web application with REST APIs for product search, filtering, and cart management, coupled with a relational MySQL database to manage inventories.</p>
+          </div>
+          <div class="work-card-bottom">
+            <span class="work-tag">Java</span>
+            <span class="work-tag">Spring Boot</span>
+            <span class="work-tag">MySQL</span>
+            <span class="work-tag">HTML5 / CSS3</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Education & Certifications Section -->
+    <section class="edu-cert-section" id="education">
+      <div class="edu-grid">
+        <!-- Education Column -->
+        <div>
+          <h2 class="edu-column-title">Education</h2>
+          
+          <div class="edu-card">
+            <span class="edu-date">Expected 2026</span>
+            <h3 class="edu-degree">Master of Computer Applications (MCA)</h3>
+            <div class="edu-school">Suryadatta Institute of Business and Management</div>
+            <p class="edu-details">Pune, India — Deepening knowledge in advanced computer science, algorithms, software engineering methodologies, and database systems.</p>
+          </div>
+
+          <div class="edu-card">
+            <span class="edu-date">Graduated May 2024</span>
+            <h3 class="edu-degree">Bachelor of Business Administration in Computer Applications (BBA-CA)</h3>
+            <div class="edu-school">Kaveri College of Arts, Science and Commerce</div>
+            <p class="edu-details">Pune, India — CGPA: 7.92. Gained solid foundational skills in logic design, object-oriented concepts, database schemas, and application development.</p>
+          </div>
+
+          <div class="edu-card">
+            <span class="edu-date">Graduated May 2021</span>
+            <h3 class="edu-degree">Higher Secondary Certificate (HSC)</h3>
+            <div class="edu-school">Prestige Public School & Jr. College</div>
+            <p class="edu-details">Pune, India — Percentage: 77.67%. Focused heavily on Mathematics, Science, and Information Technology.</p>
+          </div>
+        </div>
+
+        <!-- Certifications & Extracurricular Column -->
+        <div>
+          <h2 class="edu-column-title">Certifications & Leadership</h2>
+
+          <div class="edu-card">
+            <span class="edu-date">Oracle Cloud (2025)</span>
+            <h3 class="edu-degree">Certified OCI AI Foundations Associate</h3>
+            <div class="edu-school">Oracle</div>
+            <p class="edu-details">Verified understanding of AI concepts (Machine Learning, Deep Learning, Generative AI, Large Language Models), and OCI AI architecture services.</p>
+          </div>
+
+          <div class="edu-card">
+            <span class="edu-date">HackerRank</span>
+            <h3 class="edu-degree">Java (Basic) Certification</h3>
+            <div class="edu-school">HackerRank Verification</div>
+            <p class="edu-details">Demonstrated core capability in Java programming constructs, data structures, OOP design patterns, exceptions, and collections framework.</p>
+          </div>
+
+          <div class="edu-card">
+            <span class="edu-date">MBTB (2023)</span>
+            <h3 class="edu-degree">Java Programming Course</h3>
+            <div class="edu-school">Maharashtra Board of Technical Education</div>
+            <p class="edu-details">Rigorous training course covering object-oriented programming (OOP), JDBC database connectivity, multithreading, and networking fundamentals.</p>
+          </div>
+
+          <div class="edu-card">
+            <span class="edu-date">Extracurricular</span>
+            <h3 class="edu-degree">TechFest – "Code with Battle"</h3>
+            <div class="edu-school">Suryadatta College Organizer</div>
+            <p class="edu-details">Managed operations, volunteer training, and coordinated competitor schedules for the college's flagship coding festival battle event.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer-section" id="footer">
+    <!-- Watermark Background -->
+    <div class="footer-watermark">
+      <div class="watermark-text" id="watermark">Nilesh Suthar</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="footer-content">
+      <h2 class="footer-title" id="footerTitle">Let's build something</h2>
+      <p class="footer-subtitle" id="footerSubtitle">meaningful and memorable</p>
+      
+      <div class="footer-contacts-wrap">
+        <!-- Expanding Email circle -->
+        <a href="mailto:nilesh.g.suthar.2003@gmail.com" class="email-expanding-circle">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"></path>
+          </svg>
+          <span class="email-text-label">nilesh.g.suthar.2003@gmail.com</span>
+        </a>
+
+        <!-- LinkedIn (Social Icon) -->
+        <a href="https://linkedin.com/in/nilesh-g-suthar" target="_blank" class="footer-social-link stroke-svg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <rect x="2" y="2" width="20" height="20" rx="4" stroke-width="2"></rect>
+            <path d="M8 11v5" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M8 8v.01" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M12 16v-5" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M16 16v-3a2 2 0 1 0-4 0" stroke-width="2" stroke-linecap="round"></path>
+          </svg>
+        </a>
+
+        <!-- GitHub (Social Icon) -->
+        <a href="https://github.com/nilesh-suthar" target="_blank" class="footer-social-link stroke-svg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+
+        <!-- LeetCode (Social Icon) -->
+        <a href="https://leetcode.com/nilesh-suthar" target="_blank" class="footer-social-link">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.483 0a1.374 1.374 0 0 0-.961.411L7.11 5.826a1.374 1.374 0 0 0-.014 1.945L12.2 12.875a2.75 2.75 0 0 0 3.882.01l5.51-5.508a1.375 1.375 0 0 0-1.944-1.944l-5.51 5.507a.687.687 0 0 1-.972-.003L8.56 6.302l4.896-4.898A1.376 1.376 0 0 0 13.483 0z" />
+            <path d="M16.086 16.086a.687.687 0 0 1-.972-.003L10.51 11.48l-5.32 5.32a2.75 2.75 0 0 0-.009 3.885l4.897 4.897a1.376 1.376 0 0 0 1.944 0l8.077-8.077a1.375 1.375 0 0 0-1.944-1.944l-8.077 8.077a.687.687 0 0 1-.972-.003l-4.897-4.897a.688.688 0 0 1 .002-.972l5.32-5.32 4.604 4.604a2.75 2.75 0 0 0 3.882.01l2.062-2.062a1.375 1.375 0 0 0-1.944-1.944l-2.062 2.062z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom Footer Bar -->
+    <div class="footer-bottom-bar">
+      <span>Designed by Nilesh Suthar</span>
+      <span>Created with Antigravity</span>
+    </div>
+  </footer>
+
+  <!-- Lenis Scroll (CDN) and Custom Script -->
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
