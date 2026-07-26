@@ -315,6 +315,8 @@ img {
   align-items: center;
   position: absolute;
   width: 50%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .hero-lines-left {
@@ -362,6 +364,10 @@ img {
   letter-spacing: -0.04em;
   color: var(--color-charcoal);
   cursor: default;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 /* Mobile Subtitle */
