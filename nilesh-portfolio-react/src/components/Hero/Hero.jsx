@@ -50,22 +50,8 @@ function Hero() {
 
         {/* Title / Header Group */}
         <div className="hero-title-group">
-          {/* Left Subtitle Connection Line */}
-          <div className="hero-lines-wrap hero-lines-left">
-            <div className="hero-line-seg"></div>
-          </div>
-
           {/* Name Heading */}
           <h1 className="hero-name-heading" id="heroName">Nilesh Suthar</h1>
-
-          {/* Right Subtitle Connection Line */}
-          <div className="hero-lines-wrap hero-lines-right">
-            <div className="hero-line-seg"></div>
-          </div>
-
-          {/* Mobile Subtitles (centered) */}
-          <div className="hero-mobile-subtitle">
-          </div>
         </div>
       </section>
     </>
