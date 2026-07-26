@@ -91,8 +91,6 @@ function Footer() {
 
       {/* Bottom Footer Bar */}
       <div className="footer-bottom-bar">
-        <span>Designed by Nilesh Suthar</span>
-        <span>Created with Antigravity</span>
       </div>
     </footer>
   );
