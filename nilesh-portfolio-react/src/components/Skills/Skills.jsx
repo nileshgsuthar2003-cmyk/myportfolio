@@ -30,7 +30,7 @@ function Skills() {
         <div className="skills-wrapper">
           <div className="skills-left">
             <p className="skills-summary-intro">
-              Developing backend APIs and AI pipelines that solve real-world problems.
+              Core Technical Skills
             </p>
             <div className="skills-scrolling-titles">
               {skillsData.map((skill, index) => (
