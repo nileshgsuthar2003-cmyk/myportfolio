@@ -56,31 +56,35 @@ function Education() {
 
   return (
     <section className="edu-cert-section" id="education">
-      <div className="edu-grid">
-        {/* Education Column */}
-        <div>
+      <div className="edu-container">
+        {/* 1. Education Section */}
+        <div className="edu-block">
           <h2 className="edu-column-title">Education</h2>
-          {educationData.map((item) => (
-            <div key={item.id} className="edu-card">
-              <span className="edu-date">{item.date}</span>
-              <h3 className="edu-degree">{item.degree}</h3>
-              <div className="edu-school">{item.school}</div>
-              <p className="edu-details">{item.details}</p>
-            </div>
-          ))}
+          <div className="edu-cards-list">
+            {educationData.map((item) => (
+              <div key={item.id} className="edu-card">
+                <span className="edu-date">{item.date}</span>
+                <h3 className="edu-degree">{item.degree}</h3>
+                <div className="edu-school">{item.school}</div>
+                <p className="edu-details">{item.details}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Certifications & Extracurricular Column */}
-        <div>
+        {/* 2. Certifications & Leadership Section (Stacked below Education) */}
+        <div className="edu-block">
           <h2 className="edu-column-title">Certifications & Leadership</h2>
-          {certificationsData.map((item) => (
-            <div key={item.id} className="edu-card">
-              <span className="edu-date">{item.date}</span>
-              <h3 className="edu-degree">{item.degree}</h3>
-              <div className="edu-school">{item.school}</div>
-              <p className="edu-details">{item.details}</p>
-            </div>
-          ))}
+          <div className="edu-cards-list">
+            {certificationsData.map((item) => (
+              <div key={item.id} className="edu-card">
+                <span className="edu-date">{item.date}</span>
+                <h3 className="edu-degree">{item.degree}</h3>
+                <div className="edu-school">{item.school}</div>
+                <p className="edu-details">{item.details}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
