@@ -1239,22 +1239,27 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 80px 16px;
+  padding: 80px var(--spacing-grid);
+  max-width: clamp(300px, 80vw, 1000px);
+  margin: 0 auto;
   text-align: center;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .footer-title {
   font-family: var(--font-display);
-  font-size: clamp(48px, 8vw, 110px);
+  font-size: clamp(32px, 5vw, 76px);
   text-transform: uppercase;
-  line-height: 0.95;
+  line-height: 1;
   letter-spacing: -0.03em;
   color: var(--color-charcoal);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  max-width: 100%;
 }
 
 .footer-subtitle {
-  font-size: clamp(20px, 3vw, 44px);
+  font-size: clamp(18px, 2.4vw, 36px);
   font-weight: 300;
   letter-spacing: -0.03em;
   color: var(--color-charcoal);
