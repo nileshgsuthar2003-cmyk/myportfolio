@@ -67,15 +67,6 @@ function Hero() {
           <div className="hero-mobile-subtitle">
           </div>
         </div>
-
-        {/* Transition blocks at the bottom of hero */}
-        <div className="transition-blocks">
-          <div className="trans-block-item"></div>
-          <div className="trans-block-item"></div>
-          <div className="trans-block-item"></div>
-          <div className="trans-block-item"></div>
-          <div className="trans-block-item"></div>
-        </div>
       </section>
     </>
   );
