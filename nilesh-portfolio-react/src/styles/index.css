@@ -1602,13 +1602,178 @@ img {
   color: rgba(36, 36, 36, 0.6);
 }
 
+/* -------------------------------------------------------------
+   Work Experience Section
+------------------------------------------------------------- */
+.experience-section {
+  background-color: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+  padding-block: 10vh 12vh;
+}
+
+.experience-container {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-inline: var(--spacing-grid);
+}
+
+.experience-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 48px;
+}
+
+.experience-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  background-color: rgba(228, 143, 91, 0.15);
+  padding: 4px 12px;
+  border-radius: 12px;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.experience-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 48px);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.experience-card {
+  border: 1px solid var(--color-border);
+  padding: 36px;
+  border-radius: 20px;
+  background-color: var(--color-bg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-charcoal);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.07);
+}
+
+.exp-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-bottom: 1px solid rgba(36, 36, 36, 0.1);
+  padding-bottom: 20px;
+}
+
+.exp-role {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.8vw, 32px);
+  text-transform: uppercase;
+  margin: 0 0 6px 0;
+  line-height: 1.1;
+}
+
+.exp-company-link {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.exp-company-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.exp-meta-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
 @media (max-width: 767px) {
-  .footer-bottom-bar {
-    flex-direction: column;
-    gap: 8px;
-    text-align: center;
-    padding: 24px 16px;
+  .exp-meta-wrap {
+    align-items: flex-start;
   }
+}
+
+.exp-period-badge {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #0d9488;
+  background-color: rgba(13, 148, 136, 0.12);
+  border: 1px solid rgba(13, 148, 136, 0.3);
+  padding: 6px 14px;
+  border-radius: 14px;
+}
+
+.exp-location {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.exp-highlights-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.exp-highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.exp-bullet {
+  color: var(--color-accent);
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.exp-text {
+  flex: 1;
+}
+
+.exp-tags-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.exp-tag {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: rgba(36, 36, 36, 0.06);
+  color: var(--color-charcoal);
+  padding: 5px 12px;
+  border-radius: 16px;
 }
 
 /* -------------------------------------------------------------

@@ -21,6 +21,7 @@ function Navigation() {
           <span className="brand-logo-text">NILESH SUTHAR</span>
         </div>
         <div className="nav-links">
+          <a href="#experience" className="nav-link" onClick={(e) => scrollToSection(e, 'experience')}>Experience</a>
           <a href="#works" className="nav-link" onClick={(e) => scrollToSection(e, 'works')}>Works</a>
           <a href="#skills" className="nav-link" onClick={(e) => scrollToSection(e, 'skills')}>Skills</a>
           <a href="#education" className="nav-link" onClick={(e) => scrollToSection(e, 'education')}>Education</a>

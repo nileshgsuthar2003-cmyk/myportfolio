@@ -4,6 +4,7 @@ import Navigation from './components/Navigation/Navigation';
 import Hero from './components/Hero/Hero';
 import IntroText from './components/IntroText/IntroText';
 import Skills from './components/Skills/Skills';
+import Experience from './components/Experience/Experience';
 import Works from './components/Works/Works';
 import Education from './components/Education/Education';
 import Footer from './components/Footer/Footer';
@@ -30,6 +31,9 @@ function App() {
 
         {/* Sticky Skills Section */}
         <Skills />
+
+        {/* Professional Experience Section */}
+        <Experience />
 
         {/* Works / Projects Section */}
         <Works />
