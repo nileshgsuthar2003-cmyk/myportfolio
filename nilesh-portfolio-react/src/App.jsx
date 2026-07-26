@@ -5,6 +5,7 @@ import Hero from './components/Hero/Hero';
 import IntroText from './components/IntroText/IntroText';
 import Experience from './components/Experience/Experience';
 import Works from './components/Works/Works';
+import CodeShowcase from './components/CodeShowcase/CodeShowcase';
 import Skills from './components/Skills/Skills';
 import Education from './components/Education/Education';
 import Footer from './components/Footer/Footer';
@@ -35,14 +36,17 @@ function App() {
         {/* 2. Works / Curated Projects Section */}
         <Works />
 
-        {/* 3. Core Technical Skills Section */}
+        {/* 3. Live Code Snippet Showcase */}
+        <CodeShowcase />
+
+        {/* 4. Core Technical Skills Section */}
         <Skills />
 
-        {/* 4. Education & Certifications Section */}
+        {/* 5. Education & Certifications Section */}
         <Education />
       </main>
 
-      {/* 5. Footer / Contact Section */}
+      {/* 6. Footer / Contact Section */}
       <Footer />
 
       {/* Floating Back to Top Button */}
