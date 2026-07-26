@@ -79,7 +79,9 @@ function ProjectCard({ project }) {
       
       <div className="work-card-top">
         <div className="work-card-meta">
-          <span className="work-card-category">{project?.category}</span>
+          <span className={`work-card-category ${project?.category ? 'cat-' + project.category.toLowerCase().replace(/[^a-z0-9]+/g, '-') : ''}`}>
+            {project?.category}
+          </span>
           <span className="work-card-year">{project?.year}</span>
         </div>
         <div className="work-card-arrow">

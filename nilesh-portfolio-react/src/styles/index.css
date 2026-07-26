@@ -856,13 +856,34 @@ img {
 
 .work-card-category {
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--color-accent);
   background-color: rgba(228, 143, 91, 0.15);
-  padding: 4px 10px;
+  border: 1px solid rgba(228, 143, 91, 0.3);
+  padding: 4px 12px;
   border-radius: 12px;
+  display: inline-block;
+  transition: var(--transition-fast);
+}
+
+.work-card-category.cat-internship-project {
+  color: #0d9488;
+  background-color: rgba(13, 148, 136, 0.12);
+  border-color: rgba(13, 148, 136, 0.3);
+}
+
+.work-card-category.cat-full-stack-app {
+  color: #2563eb;
+  background-color: rgba(37, 99, 235, 0.12);
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+.work-card-category.cat-ai-engine {
+  color: #7c3aed;
+  background-color: rgba(124, 58, 237, 0.12);
+  border-color: rgba(124, 58, 237, 0.3);
 }
 
 .work-card-middle {
