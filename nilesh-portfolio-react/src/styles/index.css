@@ -1221,39 +1221,127 @@ img {
   width: 100%;
 }
 
-.edu-cards-list {
+.edu-block-header {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--color-charcoal);
+  padding-bottom: 12px;
+  margin-bottom: 32px;
 }
 
 .edu-column-title {
   font-family: var(--font-display);
-  font-size: 32px;
+  font-size: clamp(24px, 3vw, 36px);
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  border-bottom: 2px solid var(--color-charcoal);
-  padding-bottom: 12px;
-  margin-bottom: 24px;
+  margin: 0;
+}
+
+.edu-block-tag {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-charcoal);
+  opacity: 0.5;
+}
+
+.timeline-container {
+  position: relative;
+  padding-left: 24px;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 6px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--color-charcoal) 0%, rgba(36,36,36,0.15) 100%);
+}
+
+.edu-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.timeline-card {
+  position: relative;
+}
+
+.timeline-node-dot {
+  position: absolute;
+  left: -24px;
+  top: 28px;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-charcoal);
+  border: 3px solid var(--color-bg);
+  box-shadow: 0 0 0 2px var(--color-charcoal);
+  transition: var(--transition-fast);
+  z-index: 5;
+}
+
+.timeline-card:hover .timeline-node-dot {
+  background-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent);
+}
+
+.edu-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.edu-type-badge {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.degree-badge {
+  color: #2563eb;
+  background-color: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+}
+
+.cert-badge {
+  color: #0d9488;
+  background-color: rgba(13, 148, 136, 0.1);
+  border: 1px solid rgba(13, 148, 136, 0.25);
+}
+
+.leadership-badge {
+  color: #d97706;
+  background-color: rgba(217, 119, 6, 0.1);
+  border: 1px solid rgba(217, 119, 6, 0.25);
 }
 
 .edu-card {
   border: 1px solid var(--color-border);
-  padding: 24px;
-  border-radius: 12px;
+  padding: 28px;
+  border-radius: 16px;
   background-color: var(--color-bg);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.02);
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 16px;
-  transition: var(--transition-default);
+  gap: 10px;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .edu-card:hover {
-  background-color: var(--color-accent);
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+  transform: translateX(6px) translateY(-2px);
+  border-color: var(--color-charcoal);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
 }
 
 .edu-date {
