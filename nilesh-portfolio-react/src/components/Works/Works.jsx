@@ -5,13 +5,13 @@ function Works() {
     {
       id: 1,
       title: "Employee Management System (EMS)",
-      category: "Company Project",
+      category: "Internship Project",
       description: "Developed a comprehensive platform for companies to manage employees, track projects, and monitor overall staff performance.",
       highlights: [
         "Built a local Python desktop client to track active versus idle computer usage based on keyboard and mouse input, utilizing a crash-safe SQLite database to reliably store activity logs.",
         "Deployed and configured the application backend on a live remote Linux server using Gunicorn, Eventlet workers, and systemd."
       ],
-      year: "2025",
+      year: "2026",
       tags: ["Python", "SQLite", "Linux Server", "Gunicorn", "systemd", "Eventlet"],
       link: "https://github.com/nileshgsuthar2003-cmyk",
       mockupType: "ems"
@@ -19,14 +19,14 @@ function Works() {
     {
       id: 2,
       title: "SpectraSynth CRM",
-      category: "Company Project",
+      category: "Internship Project",
       description: "Developed a commercial Customer Relationship Management (CRM) platform to streamline business operations and automate data workflows.",
       highlights: [
         "Implemented an automated web scraper to dynamically fetch and update real-time pricing data from external websites.",
         "Built an asynchronous email ingestion system that utilizes the Gemini API to parse unstructured incoming emails and convert them into a structured, easily processable format.",
         "Engineered a data extraction pipeline to efficiently process and organize complex chemical information."
       ],
-      year: "2025",
+      year: "2026",
       tags: ["Python", "Django", "Gemini API", "Web Scraping", "LLM Pipeline", "MySQL"],
       link: "https://github.com/nileshgsuthar2003-cmyk",
       mockupType: "crm"
