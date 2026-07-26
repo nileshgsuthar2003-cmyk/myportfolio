@@ -1,3 +1,5 @@
+import logoSvg from '../../assets/logo.svg';
+
 function Navigation() {
   const scrollToSection = (e, sectionId) => {
     e.preventDefault();
@@ -9,7 +11,10 @@ function Navigation() {
 
   return (
     <nav className="top-nav">
-      <div className="logo-text">N.S.</div>
+      <div className="brand-logo-wrap" onClick={(e) => scrollToSection(e, 'heroName')}>
+        <img src={logoSvg} alt="Nilesh Suthar Logo" className="brand-logo-img" />
+        <span className="brand-logo-text">NILESH SUTHAR</span>
+      </div>
       <div className="nav-links">
         <a href="#works" className="nav-link" onClick={(e) => scrollToSection(e, 'works')}>Works</a>
         <a href="#skills" className="nav-link" onClick={(e) => scrollToSection(e, 'skills')}>Skills</a>
