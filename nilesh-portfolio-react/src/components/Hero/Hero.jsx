@@ -50,8 +50,14 @@ function Hero() {
 
         {/* Title / Header Group */}
         <div className="hero-title-group">
+          {/* Top Line (Above NILESH) */}
+          <div className="hero-top-line"></div>
+
           {/* Name Heading */}
           <h1 className="hero-name-heading" id="heroName">Nilesh Suthar</h1>
+
+          {/* Bottom Line (Under SUTHAR) */}
+          <div className="hero-bottom-line"></div>
         </div>
       </section>
     </>

@@ -313,6 +313,24 @@ img {
   justify-content: center;
 }
 
+.hero-top-line {
+  position: absolute;
+  top: 0;
+  left: var(--spacing-grid);
+  right: 50%;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+.hero-bottom-line {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  right: var(--spacing-grid);
+  height: 1px;
+  background-color: var(--color-border);
+}
+
 .hero-lines-wrap {
   display: flex;
   align-items: center;
