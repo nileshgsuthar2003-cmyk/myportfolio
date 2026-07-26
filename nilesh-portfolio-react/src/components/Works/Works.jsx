@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import ProjectCard from './ProjectCard';
 
 function Works() {
+  const [activeFilter, setActiveFilter] = useState('All');
+
   const projects = [
     {
       id: 1,
@@ -61,6 +64,12 @@ function Works() {
     }
   ];
 
+  const filterCategories = ['All', 'Internship Project', 'Full Stack App', 'AI Engine'];
+
+  const filteredProjects = activeFilter === 'All' 
+    ? projects 
+    : projects.filter(p => p.category === activeFilter);
+
   return (
     <section className="works-section" id="works">
       <div className="works-header">
@@ -68,10 +77,23 @@ function Works() {
         <p className="works-section-desc">
           Commercial systems, enterprise platforms, e-commerce web apps, and intelligent pipelines.
         </p>
+
+        {/* Category Filter Pills */}
+        <div className="works-filter-bar">
+          {filterCategories.map((cat) => (
+            <button
+              key={cat}
+              className={`works-filter-pill ${activeFilter === cat ? 'active' : ''}`}
+              onClick={() => setActiveFilter(cat)}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="works-grid-container">
-        {projects.map((project) => (
+        {filteredProjects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
       </div>

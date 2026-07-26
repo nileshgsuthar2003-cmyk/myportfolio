@@ -7,6 +7,7 @@ import Skills from './components/Skills/Skills';
 import Works from './components/Works/Works';
 import Education from './components/Education/Education';
 import Footer from './components/Footer/Footer';
+import BackToTop from './components/BackToTop/BackToTop';
 import './styles/index.css';
 
 function App() {
@@ -39,6 +40,9 @@ function App() {
 
       {/* Footer Section */}
       <Footer />
+
+      {/* Floating Back to Top Button */}
+      <BackToTop />
     </>
   );
 }
