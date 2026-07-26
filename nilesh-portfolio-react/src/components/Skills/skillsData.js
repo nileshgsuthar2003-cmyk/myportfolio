@@ -28,6 +28,15 @@ export const skillsData = [
   },
   {
     id: 3,
+    title: "Version Control & Workflow",
+    content: "Managing codebase versioning, collaborative development, branching strategies, code reviews, and automated release workflows using Git and GitHub.",
+    pills: ["Git", "GitHub"],
+    icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7a2 2 0 100-4 2 2 0 000 4zm0 8a2 2 0 100 4 2 2 0 000-4zm10-4a2 2 0 100-4 2 2 0 000 4z" />
+           </svg>`
+  },
+  {
+    id: 4,
     title: "AI & Specialized Tools",
     content: "Building AI pipelines, deep learning utilities, and OCR document processors. Hands-on experience with PyTorch, Local LLM inference (Gemini, Qwen), Nougat OCR, and API rate-limit management.",
     pills: ["PyTorch", "Local LLM Inference (Gemini, Qwen)", "Nougat OCR", "API Rate-Limit Management"],
