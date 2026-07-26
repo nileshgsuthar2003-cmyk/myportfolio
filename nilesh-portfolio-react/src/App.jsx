@@ -2,7 +2,6 @@ import useLenis from './hooks/useLenis';
 import GridLines from './components/layout/GridLines';
 import Navigation from './components/Navigation/Navigation';
 import Hero from './components/Hero/Hero';
-import RolePills from './components/RolePills/RolePills';
 import IntroText from './components/IntroText/IntroText';
 import Skills from './components/Skills/Skills';
 import Works from './components/Works/Works';
@@ -24,9 +23,6 @@ function App() {
       <main>
         {/* Hero Section */}
         <Hero />
-
-        {/* Sticky Roles Pills Section */}
-        <RolePills />
 
         {/* Sticky Reveal Text Section */}
         <IntroText />
