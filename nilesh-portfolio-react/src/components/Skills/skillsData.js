@@ -10,15 +10,6 @@ export const skillsData = [
   },
   {
     id: 1,
-    title: "Frontend Technologies",
-    content: "Crafting responsive, dynamic, and modern user interfaces. Proficient in React, semantic HTML5, and custom CSS for smooth, interactive user experiences.",
-    pills: ["React", "HTML", "CSS"],
-    icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-           </svg>`
-  },
-  {
-    id: 2,
     title: "Databases & ORMs",
     content: "Architecting relational database schemas, writing efficient queries, and managing data ORM layers using MySQL, Sequelize ORM, SQLite, and relational database design principles.",
     pills: ["MySQL", "Sequelize ORM", "SQLite", "Relational Database Design"],
@@ -27,7 +18,7 @@ export const skillsData = [
            </svg>`
   },
   {
-    id: 3,
+    id: 2,
     title: "DevOps & Infrastructure",
     content: "Managing Linux servers and production environments. Experienced with Nginx reverse proxying, systemd services, Gunicorn, SSL automation, SSH workflows, and Eventlet workers.",
     pills: ["Linux Server Administration", "Nginx", "systemd", "Gunicorn", "SSL Automation", "SSH", "Eventlet Workers"],
@@ -36,7 +27,7 @@ export const skillsData = [
            </svg>`
   },
   {
-    id: 4,
+    id: 3,
     title: "AI & Specialized Tools",
     content: "Building AI pipelines, deep learning utilities, and OCR document processors. Hands-on experience with PyTorch, Local LLM inference (Gemini, Qwen), Nougat OCR, and API rate-limit management.",
     pills: ["PyTorch", "Local LLM Inference (Gemini, Qwen)", "Nougat OCR", "API Rate-Limit Management"],
