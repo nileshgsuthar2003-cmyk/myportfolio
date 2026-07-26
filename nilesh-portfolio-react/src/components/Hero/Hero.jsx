@@ -53,7 +53,6 @@ function Hero() {
           {/* Left Subtitle Connection Line */}
           <div className="hero-lines-wrap hero-lines-left">
             <div className="hero-line-seg"></div>
-            <span className="hero-subtitle-text">Software Engineer</span>
           </div>
 
           {/* Name Heading */}
@@ -66,7 +65,6 @@ function Hero() {
 
           {/* Mobile Subtitles (centered) */}
           <div className="hero-mobile-subtitle">
-            <span className="hero-subtitle-text">Software Engineer</span>
           </div>
         </div>
 
