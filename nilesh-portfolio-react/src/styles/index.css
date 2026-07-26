@@ -315,20 +315,48 @@ img {
 
 .hero-top-line {
   position: absolute;
-  top: 0;
+  top: -4px;
   left: var(--spacing-grid);
   right: 50%;
-  height: 1px;
-  background-color: var(--color-border);
+  height: 2px;
+  background: linear-gradient(90deg, rgba(228, 143, 91, 0.1) 0%, var(--color-accent) 100%);
+  border-radius: 2px;
+}
+
+.hero-top-line::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  box-shadow: 0 0 8px rgba(228, 143, 91, 0.8);
 }
 
 .hero-bottom-line {
   position: absolute;
-  bottom: 0;
+  bottom: -4px;
   left: 50%;
   right: var(--spacing-grid);
-  height: 1px;
-  background-color: var(--color-border);
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-accent) 0%, rgba(228, 143, 91, 0.1) 100%);
+  border-radius: 2px;
+}
+
+.hero-bottom-line::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  box-shadow: 0 0 8px rgba(228, 143, 91, 0.8);
 }
 
 .hero-lines-wrap {
