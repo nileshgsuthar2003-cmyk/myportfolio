@@ -277,7 +277,7 @@ img {
 .hero-signature-container {
   position: relative;
   z-index: 20;
-  margin-bottom: -15px;
+  margin-bottom: 50px;
   display: flex;
   justify-content: center;
 }
