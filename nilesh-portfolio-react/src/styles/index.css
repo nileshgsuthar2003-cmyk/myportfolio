@@ -588,6 +588,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-left: 28px;
 }
 
 .skills-summary-intro {
