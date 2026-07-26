@@ -33,6 +33,20 @@ function Works() {
     },
     {
       id: 3,
+      title: "Online Book Store",
+      category: "Full Stack App",
+      description: "Built a dynamic full-stack e-commerce web application with REST APIs for product search, filtering, and cart management, coupled with a relational database to manage inventories.",
+      highlights: [
+        "Engineered RESTful API endpoints for seamless catalog browsing, item filtering, and cart state persistence.",
+        "Designed relational MySQL database schema for inventory management, order processing, and user transactions."
+      ],
+      year: "2024",
+      tags: ["Java", "Spring Boot", "MySQL", "REST APIs", "HTML5 / CSS3"],
+      link: "https://github.com/nileshgsuthar2003-cmyk",
+      mockupType: "bookstore"
+    },
+    {
+      id: 4,
       title: "Math PDF Extractor",
       category: "AI Engine",
       description: "Developed an advanced OCR utility utilizing Meta's Nougat model and Hugging Face Transformers to transcribe scientific papers and extract complex formulas into structured Markdown format.",
@@ -52,7 +66,7 @@ function Works() {
       <div className="works-header">
         <h2 className="works-section-title" id="worksTitle">Curated Projects</h2>
         <p className="works-section-desc">
-          Commercial systems, enterprise platforms, and intelligent pipelines built with precision.
+          Commercial systems, enterprise platforms, e-commerce web apps, and intelligent pipelines.
         </p>
       </div>
 

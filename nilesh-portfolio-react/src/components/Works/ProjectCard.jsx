@@ -55,6 +55,26 @@ function ProjectCard({ project }) {
             </div>
           </div>
         )}
+
+        {project.mockupType === 'bookstore' && (
+          <div className="bookstore-mockup">
+            <div className="mock-book book-one">
+              <div className="book-spine"></div>
+              <div className="book-cover">
+                <div className="book-title">E-Commerce</div>
+                <div className="book-author">REST API</div>
+              </div>
+            </div>
+            <div className="mock-book book-two">
+              <div className="book-spine"></div>
+              <div className="book-cover">
+                <div className="book-title">SQL DB</div>
+                <div className="book-author">MySQL</div>
+              </div>
+            </div>
+            <div className="shop-badge">$24.99</div>
+          </div>
+        )}
       </div>
       
       <div className="work-card-top">
