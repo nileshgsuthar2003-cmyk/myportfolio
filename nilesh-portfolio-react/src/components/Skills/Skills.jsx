@@ -58,6 +58,7 @@ function Skills() {
                 transition: 'opacity 0.3s ease, transform 0.3s ease'
               }}
             >
+              <div className="card-hover-bg"></div>
               <div>
                 <div className="skill-box-header">
                   <div className="skill-icon-placeholder" id="skillIcon" dangerouslySetInnerHTML={{ __html: currentSkill.icon }} />

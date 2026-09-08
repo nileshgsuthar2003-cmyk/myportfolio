@@ -705,6 +705,9 @@ img {
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .skill-box-header {
@@ -723,12 +726,14 @@ img {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  transition: all 0.3s ease;
 }
 
 .skill-icon-placeholder svg {
   width: 26px;
   height: 26px;
   stroke: var(--color-charcoal);
+  transition: stroke 0.3s ease;
 }
 
 .skill-box-title {
@@ -737,6 +742,7 @@ img {
   text-transform: uppercase;
   letter-spacing: -0.02em;
   color: var(--color-charcoal);
+  transition: color 0.3s ease;
 }
 
 .skill-box-content {
@@ -744,6 +750,7 @@ img {
   line-height: 1.65;
   color: var(--color-text-muted);
   margin-bottom: 24px;
+  transition: color 0.3s ease;
 }
 
 .skill-pill-tags {
@@ -763,7 +770,35 @@ img {
   line-height: 1.2;
   white-space: nowrap;
   letter-spacing: -0.01em;
+  transition: all 0.3s ease;
 }
+
+.skill-detail-display-box:hover .card-hover-bg {
+  transform: translateY(0);
+}
+
+.skill-detail-display-box > * {
+  position: relative;
+  z-index: 2;
+}
+
+.skill-detail-display-box:hover .skill-box-content {
+  color: var(--color-charcoal);
+}
+
+.skill-detail-display-box:hover .skill-icon-placeholder {
+  background-color: var(--color-charcoal);
+}
+
+.skill-detail-display-box:hover .skill-icon-placeholder svg {
+  stroke: var(--color-bg);
+}
+
+.skill-detail-display-box:hover .skill-pill-tag {
+  background-color: var(--color-bg);
+  color: var(--color-charcoal);
+}
+
 
 /* -------------------------------------------------------------
    Works / Projects Section
