@@ -62,7 +62,7 @@ function Footer() {
           </a>
 
           {/* LinkedIn (Social Icon) */}
-          <a href="https://linkedin.com/in/nilesh-g-suthar" target="_blank" rel="noopener noreferrer" className="footer-social-link stroke-svg">
+          <a href="https://www.linkedin.com/in/nilesh-suthar-r484/" target="_blank" rel="noopener noreferrer" className="footer-social-link stroke-svg">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <rect x="2" y="2" width="20" height="20" rx="4" strokeWidth="2"></rect>
               <path d="M8 11v5" strokeWidth="2" strokeLinecap="round"></path>
@@ -73,7 +73,7 @@ function Footer() {
           </a>
 
           {/* GitHub (Social Icon) */}
-          <a href="https://github.com/nilesh-suthar" target="_blank" rel="noopener noreferrer" className="footer-social-link stroke-svg">
+          <a href="https://github.com/nileshgsuthar2003-cmyk" target="_blank" rel="noopener noreferrer" className="footer-social-link stroke-svg">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
             </svg>
