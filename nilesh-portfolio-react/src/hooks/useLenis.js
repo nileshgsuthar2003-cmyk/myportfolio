@@ -20,6 +20,9 @@ function useLenis() {
       touchMultiplier: 1.2
     });
 
+    // Expose globally so other components can use lenis.scrollTo
+    window.__lenis__ = lenis;
+
     lenis.scrollTo(0, { immediate: true });
 
     let rafId;
@@ -32,6 +35,7 @@ function useLenis() {
     return () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      window.__lenis__ = null;
     };
   }, []);
 }

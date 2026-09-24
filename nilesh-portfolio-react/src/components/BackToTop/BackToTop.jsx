@@ -17,10 +17,12 @@ function BackToTop() {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    // Use Lenis scroll engine if available (avoids conflict with native smooth scroll)
+    if (window.__lenis__) {
+      window.__lenis__.scrollTo(0, { duration: 1.5 });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (
