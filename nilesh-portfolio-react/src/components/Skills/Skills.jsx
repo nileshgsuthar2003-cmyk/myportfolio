@@ -1,29 +1,84 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { skillsData } from './skillsData';
 import brushStroke from '../../assets/brush-stroke.webp';
 
 function Skills() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const containerRef = useRef(null);
   const displayBoxRef = useRef(null);
+  const prevIndexRef = useRef(0);
 
-  const handleSkillClick = (index) => {
+  // Scroll-driven skill activation
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const rect = container.getBoundingClientRect();
+      const containerHeight = container.offsetHeight;
+      const viewportHeight = window.innerHeight;
+
+      // How far the sticky section has scrolled through
+      // rect.top starts at some positive value and goes negative as we scroll
+      const scrolled = -rect.top;
+      const scrollableDistance = containerHeight - viewportHeight;
+
+      if (scrollableDistance <= 0) return;
+
+      const progress = Math.max(0, Math.min(1, scrolled / scrollableDistance));
+      setScrollProgress(progress);
+
+      // Map progress to skill index
+      // Divide the scroll range evenly among skills
+      const totalSkills = skillsData.length;
+      const newIndex = Math.min(
+        totalSkills - 1,
+        Math.floor(progress * totalSkills)
+      );
+
+      if (newIndex !== prevIndexRef.current) {
+        setIsTransitioning(true);
+        setTimeout(() => {
+          setActiveIndex(newIndex);
+          prevIndexRef.current = newIndex;
+          setTimeout(() => {
+            setIsTransitioning(false);
+          }, 50);
+        }, 200);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial check
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Also allow click to jump
+  const handleSkillClick = useCallback((index) => {
     if (index === activeIndex || isTransitioning) return;
     
-    setIsTransitioning(true);
+    const container = containerRef.current;
+    if (!container) return;
+
+    const containerTop = container.getBoundingClientRect().top + window.scrollY;
+    const containerHeight = container.offsetHeight;
+    const viewportHeight = window.innerHeight;
+    const scrollableDistance = containerHeight - viewportHeight;
+
+    // Scroll to the position that would activate this skill
+    const targetProgress = (index + 0.5) / skillsData.length;
+    const targetScroll = containerTop + targetProgress * scrollableDistance;
     
-    setTimeout(() => {
-      setActiveIndex(index);
-      setTimeout(() => {
-        setIsTransitioning(false);
-      }, 50);
-    }, 300);
-  };
+    window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+  }, [activeIndex, isTransitioning]);
 
   const currentSkill = skillsData[activeIndex];
 
   return (
-    <div className="sticky-skills-container">
+    <div className="sticky-skills-container" ref={containerRef}>
       <section className="sticky-skills-section" id="skills">
         <img src={brushStroke} alt="brush stroke separator" className="brush-stroke-banner" />
         
@@ -33,17 +88,35 @@ function Skills() {
               Core Technical Skills
             </p>
             <div className="skills-scrolling-titles">
-              {skillsData.map((skill, index) => (
-                <div
-                  key={skill.id}
-                  className={`skill-row-title ${index === activeIndex ? 'active' : 'inactive'}`}
-                  data-skill-index={index}
-                  onClick={() => handleSkillClick(index)}
-                  style={{ cursor: 'pointer' }}
-                >
-                  {skill.title}
-                </div>
-              ))}
+              {/* Scroll progress track */}
+              <div className="skills-progress-track">
+                <div 
+                  className="skills-progress-fill"
+                  style={{ 
+                    height: `${((activeIndex + 1) / skillsData.length) * 100}%`
+                  }}
+                />
+                {skillsData.map((_, i) => (
+                  <div 
+                    key={i}
+                    className={`skills-progress-dot ${i <= activeIndex ? 'active' : ''}`}
+                    style={{ top: `${(i / (skillsData.length - 1)) * 100}%` }}
+                  />
+                ))}
+              </div>
+              <div className="skills-titles-list">
+                {skillsData.map((skill, index) => (
+                  <div
+                    key={skill.id}
+                    className={`skill-row-title ${index === activeIndex ? 'active' : 'inactive'}`}
+                    data-skill-index={index}
+                    onClick={() => handleSkillClick(index)}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    {skill.title}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
           

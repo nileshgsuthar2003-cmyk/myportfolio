@@ -1,30 +1,14 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect } from 'react';
+
+const originalText = "MCA Student & AI Specialist crafting intelligent systems and robust backend architectures.";
+const words = originalText.split(' ');
 
 function IntroText() {
   const containerRef = useRef(null);
   const textRef = useRef(null);
-  const [chars, setChars] = useState([]);
-  const originalText = "MCA Student & AI Specialist crafting intelligent systems and robust backend architectures.";
 
   useEffect(() => {
-    // Split text into characters
-    const words = originalText.split(' ');
-    const charArray = [];
-    
-    words.forEach((word, wordIdx) => {
-      word.split('').forEach((char) => {
-        charArray.push(char);
-      });
-      if (wordIdx < words.length - 1) {
-        charArray.push(' ');
-      }
-    });
-    
-    setChars(charArray);
-  }, []);
-
-  useEffect(() => {
-    if (!containerRef.current || chars.length === 0) return;
+    if (!containerRef.current || !textRef.current) return;
 
     let containerTop = 0;
     let containerHeight = 0;
@@ -40,13 +24,12 @@ function IntroText() {
     }
 
     cacheDimensions();
-    window.addEventListener('resize', cacheDimensions);
-    setTimeout(cacheDimensions, 100);
+    window.addEventListener('resize', cacheDimensions, { passive: true });
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const startTrigger = containerTop - windowHeight;
-      let progress = (scrollY - startTrigger) / containerHeight;
+      let progress = (scrollY - startTrigger) / (containerHeight || 1);
       progress = Math.max(0, Math.min(1, progress));
 
       const charElements = textRef.current?.querySelectorAll('.intro-char');
@@ -64,16 +47,14 @@ function IntroText() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', cacheDimensions);
     };
-  }, [chars]);
-
-  const words = originalText.split(' ');
+  }, []);
 
   return (
     <div className="sticky-intro-container" ref={containerRef} id="introContainer">

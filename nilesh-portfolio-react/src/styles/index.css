@@ -71,12 +71,15 @@ html, body {
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 /* Lenis Integration smooth scroll */
 html.lenis, html.lenis body {
   height: auto;
+}
+html.lenis {
+  scroll-behavior: auto !important;
 }
 .lenis [data-lenis-prevent] {
   overscroll-behavior: contain;
@@ -585,7 +588,7 @@ img {
 .sticky-skills-container {
   position: relative;
   z-index: 10;
-  height: 250vh;
+  height: 400vh;
 }
 
 .sticky-skills-section {
@@ -642,12 +645,60 @@ img {
 
 .skills-scrolling-titles {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 24px;
   font-family: var(--font-display);
   font-size: clamp(20px, 2.4vw, 38px);
   line-height: 1.2;
   text-transform: uppercase;
+}
+
+/* Progress track */
+.skills-progress-track {
+  position: relative;
+  width: 3px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.skills-progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--color-accent);
+  border-radius: 3px;
+  transition: height 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.skills-progress-dot {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.08);
+  border: 2px solid var(--color-bg);
+  transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+  z-index: 2;
+}
+
+.skills-progress-dot.active {
+  background: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(244, 96, 10, 0.2);
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+.skills-titles-list {
+  display: flex;
+  flex-direction: column;
   gap: 16px;
+  flex: 1;
 }
 
 .skill-row-title {
