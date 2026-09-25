@@ -1,20 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import logoSvg from '../../assets/logo.svg';
 import ResumeModal from './ResumeModal';
 
 function Navigation() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  // Lock body scroll when mobile menu is open
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => { document.body.style.overflow = ''; };
-  }, [isMobileMenuOpen]);
+  const sidebarRef = useRef(null);
+  const hamburgerRef = useRef(null);
 
   const scrollToSection = (e, sectionId) => {
     e.preventDefault();
@@ -29,6 +21,48 @@ function Navigation() {
     }
   };
 
+  // Close when clicking outside sidebar or pressing Escape
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    const handleClickOutside = (event) => {
+      if (
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target) &&
+        hamburgerRef.current &&
+        !hamburgerRef.current.contains(event.target)
+      ) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside, { passive: true });
+    document.addEventListener('keydown', handleKeyDown);
+
+    // Prevent background scrolling while mobile drawer is open
+    document.body.style.overflow = 'hidden';
+    if (window.__lenis__) {
+      window.__lenis__.stop();
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+      if (window.__lenis__) {
+        window.__lenis__.start();
+      }
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <>
       <nav className="top-nav">
@@ -39,9 +73,11 @@ function Navigation() {
 
         {/* Hamburger button — mobile only */}
         <button 
+          ref={hamburgerRef}
           className={`hamburger-btn ${isMobileMenuOpen ? 'open' : ''}`} 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
+          aria-expanded={isMobileMenuOpen}
         >
           <span className="hamburger-line"></span>
           <span className="hamburger-line"></span>
@@ -66,9 +102,30 @@ function Navigation() {
         </div>
       </nav>
 
-      {/* Mobile menu overlay — OUTSIDE nav to avoid clipping */}
-      <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`} onClick={() => setIsMobileMenuOpen(false)}></div>
-      <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+      {/* Mobile menu overlay — outside top-nav so backdrop-filter doesn't clip it */}
+      <div 
+        className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`} 
+        onClick={() => setIsMobileMenuOpen(false)}
+        onTouchStart={() => setIsMobileMenuOpen(false)}
+        aria-hidden="true"
+      />
+
+      {/* Mobile menu drawer — outside top-nav for proper viewport layering */}
+      <div 
+        ref={sidebarRef}
+        className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}
+        aria-label="Mobile Navigation"
+      >
+        <div className="mobile-menu-header">
+          <button 
+            className="mobile-menu-close-btn" 
+            onClick={() => setIsMobileMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            &times;
+          </button>
+        </div>
+
         <a href="#experience" className="mobile-menu-link" onClick={(e) => scrollToSection(e, 'experience')}>Experience</a>
         <a href="#works" className="mobile-menu-link" onClick={(e) => scrollToSection(e, 'works')}>Works</a>
         <a href="#skills" className="mobile-menu-link" onClick={(e) => scrollToSection(e, 'skills')}>Skills</a>
