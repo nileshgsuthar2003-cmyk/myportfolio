@@ -63,12 +63,23 @@ function Skills() {
     const container = containerRef.current;
     if (!container) return;
 
-    const containerTop = container.getBoundingClientRect().top + window.scrollY;
     const containerHeight = container.offsetHeight;
     const viewportHeight = window.innerHeight;
     const scrollableDistance = containerHeight - viewportHeight;
 
-    // Scroll to the position that would activate this skill
+    // On mobile (no sticky scroll), directly switch the skill
+    if (scrollableDistance <= 50) {
+      setIsTransitioning(true);
+      prevIndexRef.current = index;
+      setTimeout(() => {
+        setActiveIndex(index);
+        setTimeout(() => setIsTransitioning(false), 50);
+      }, 200);
+      return;
+    }
+
+    // On desktop, scroll to the position that would activate this skill
+    const containerTop = container.getBoundingClientRect().top + window.scrollY;
     const targetProgress = (index + 0.5) / skillsData.length;
     const targetScroll = containerTop + targetProgress * scrollableDistance;
     

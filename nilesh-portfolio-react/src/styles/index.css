@@ -152,11 +152,12 @@ img {
 }
 
 .nav-links {
-  display: flex;
+  display: none;
   gap: 16px;
 }
 @media (min-width: 768px) {
   .nav-links {
+    display: flex;
     gap: 32px;
   }
 }
@@ -177,6 +178,128 @@ img {
   border-color: var(--color-charcoal);
   background-color: var(--color-charcoal);
   color: var(--color-bg);
+}
+
+/* Hamburger Button — Mobile Only */
+.hamburger-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1100;
+}
+@media (min-width: 768px) {
+  .hamburger-btn {
+    display: none;
+  }
+}
+
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-charcoal);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger-btn.open .hamburger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger-btn.open .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-btn.open .hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.mobile-menu-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+@media (min-width: 768px) {
+  .mobile-menu-overlay {
+    display: none;
+  }
+}
+
+/* Mobile Menu Drawer */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 75%;
+  max-width: 320px;
+  height: 100vh;
+  background-color: var(--color-charcoal);
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 32px 40px;
+  gap: 8px;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.mobile-menu.open {
+  transform: translateX(0);
+}
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+.mobile-menu-link {
+  font-family: var(--font-display);
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--color-bg);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: color 0.3s ease, padding-left 0.3s ease;
+  text-decoration: none;
+}
+.mobile-menu-link:hover {
+  color: var(--color-accent);
+  padding-left: 8px;
+}
+
+.mobile-resume-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 14px 24px;
+  background-color: var(--color-accent);
+  color: var(--color-charcoal);
+  border: none;
+  border-radius: 12px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.mobile-resume-btn:hover {
+  background-color: #e2550a;
+  transform: scale(1.02);
 }
 
 .brand-logo-wrap {
@@ -2148,3 +2271,244 @@ img {
   transform: translateY(-4px);
   box-shadow: 0 14px 28px rgba(228, 143, 91, 0.4);
 }
+
+/* =============================================================
+   MOBILE RESPONSIVE OVERRIDES (max-width: 767px)
+   ============================================================= */
+@media (max-width: 767px) {
+
+  /* --- Global --- */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* --- Experience Section --- */
+  .experience-section {
+    padding-block: 60px 40px;
+  }
+
+  .experience-container {
+    padding-inline: 16px;
+  }
+
+  .experience-card {
+    padding: 20px;
+    gap: 14px;
+    border-radius: 14px;
+  }
+
+  .exp-role {
+    font-size: 20px;
+  }
+
+  .exp-card-header {
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 14px;
+  }
+
+  .exp-highlight-text {
+    font-size: 13px;
+  }
+
+  /* --- Works / Projects Section --- */
+  .works-header {
+    padding-block: 48px 32px;
+  }
+
+  .works-grid-container {
+    margin-inline: 0;
+  }
+
+  .work-card {
+    padding: 24px 16px;
+    min-height: auto;
+  }
+
+  .work-project-title {
+    font-size: 22px;
+  }
+
+  .work-project-description {
+    font-size: 13px;
+  }
+
+  .work-tag {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+
+  .work-card-bottom {
+    gap: 6px;
+  }
+
+  .project-highlight-item {
+    font-size: 13px;
+  }
+
+  /* --- Skills Section --- */
+  .sticky-skills-container {
+    height: auto;
+  }
+
+  .sticky-skills-section {
+    position: relative;
+    height: auto;
+    overflow: visible;
+  }
+
+  .brush-stroke-banner {
+    display: none;
+  }
+
+  .skills-wrapper {
+    padding: 40px 16px;
+    gap: 20px;
+  }
+
+  .skills-left {
+    padding-left: 0;
+  }
+
+  .skills-summary-intro {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .skills-scrolling-titles {
+    font-size: 14px;
+    gap: 8px;
+    flex-direction: column;
+  }
+
+  .skills-progress-track {
+    display: none !important;
+  }
+
+  .skills-titles-list {
+    gap: 6px;
+  }
+
+  .skill-row-title {
+    font-size: 14px;
+    padding: 4px 0;
+  }
+
+  .skill-row-title.inactive {
+    opacity: 0.3;
+    transform: none;
+  }
+
+  .skills-right {
+    flex: none;
+  }
+
+  .skill-detail-display-box {
+    padding: 20px;
+    min-height: auto;
+    border-radius: 14px;
+    max-width: 100%;
+  }
+
+  .skill-box-header {
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .skill-box-title {
+    font-size: 16px;
+  }
+
+  .skill-box-content {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  .skill-icon-placeholder {
+    width: 36px;
+    height: 36px;
+  }
+
+  .skill-icon-placeholder svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .skill-pill-tags {
+    margin-top: 12px;
+    gap: 6px;
+  }
+
+  .skill-pill-tag {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  /* --- Education Section --- */
+  .education-section {
+    padding-block: 48px 60px;
+  }
+
+  .edu-container {
+    padding-inline: 16px;
+    gap: 40px;
+  }
+
+  .edu-card {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .timeline-container {
+    padding-left: 20px;
+  }
+
+  .timeline-node-dot {
+    left: -20px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .timeline-line {
+    left: 4px;
+  }
+
+  /* --- Footer / Contact --- */
+  .footer-content {
+    padding: 48px 16px;
+  }
+
+  .footer-title {
+    font-size: clamp(28px, 8vw, 48px);
+  }
+
+  .footer-social-row {
+    gap: 16px;
+  }
+
+  /* --- Hero Section --- */
+  .hero-content {
+    padding-inline: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  /* --- IntroText Section --- */
+  .intro-section {
+    padding-inline: 16px;
+  }
+
+  /* --- Resume Modal --- */
+  .resume-modal-content {
+    width: 92%;
+    margin: auto;
+    padding: 24px;
+  }
+}
+
