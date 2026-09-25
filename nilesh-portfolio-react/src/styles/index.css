@@ -713,15 +713,15 @@ img {
 
 .intro-text-paragraph {
   font-family: var(--font-sans);
-  font-size: clamp(28px, 4.5vw, 64px);
-  font-weight: 700;
-  line-height: 1.25;
-  letter-spacing: -0.03em;
+  font-size: clamp(20px, 2.5vw, 36px);
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
   text-align: center;
   color: var(--color-bg);
-  max-width: 85%;
+  max-width: 1060px;
   margin-inline: auto;
-  padding-inline: 20px;
+  padding-inline: 24px;
 }
 
 .intro-word {
@@ -731,8 +731,8 @@ img {
 
 .intro-char {
   display: inline;
-  opacity: 0.25;
-  transition: opacity 0.2s ease;
+  opacity: 0.22;
+  transition: opacity 0.15s ease;
   will-change: opacity;
 }
 .intro-char.active {
@@ -2534,8 +2534,11 @@ img {
   }
 
   /* --- IntroText Section --- */
-  .intro-section {
+  .intro-text-paragraph {
+    font-size: clamp(16px, 4.5vw, 22px);
+    line-height: 1.45;
     padding-inline: 16px;
+    max-width: 100%;
   }
 
   /* --- Resume Modal --- */

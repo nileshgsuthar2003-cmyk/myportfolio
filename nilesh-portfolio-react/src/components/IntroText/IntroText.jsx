@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 
-const originalText = "MCA Student & AI Specialist crafting intelligent systems and robust backend architectures.";
+const originalText = "Results-driven Data Analyst with a strong foundation in transforming complex datasets into actionable business insights. Proficient in robust data manipulation, visualization, and reporting using SQL and Python (Pandas). Experienced in automating data extraction pipelines to enhance analytical capabilities and support strategic decision-making.";
 const words = originalText.split(' ');
 
 function IntroText() {
@@ -28,14 +28,18 @@ function IntroText() {
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const startTrigger = containerTop - windowHeight;
-      let progress = (scrollY - startTrigger) / (containerHeight || 1);
+      const stickyDistance = containerHeight - windowHeight;
+      const scrolledInside = scrollY - containerTop;
+      
+      // Calculate smooth reveal progress as the user scrolls through the sticky section
+      let progress = stickyDistance > 0 ? scrolledInside / stickyDistance : 0;
       progress = Math.max(0, Math.min(1, progress));
 
       const charElements = textRef.current?.querySelectorAll('.intro-char');
       if (charElements) {
         const totalChars = charElements.length;
-        const activeLimit = Math.floor(progress * totalChars * 1.5);
+        // Characters illuminate steadily from start to finish of sticky scroll
+        const activeLimit = Math.floor(progress * totalChars);
 
         charElements.forEach((char, idx) => {
           if (idx < activeLimit) {
